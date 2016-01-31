@@ -1,0 +1,19 @@
+---
+# Variable setup
+- name: Check paths
+  include_vars: paths.yml
+- name: Ensure configuration and log directories exist
+  file:
+    path: "{{ item.path }}"
+    state: directory
+    follow: true
+    mode: "{{ item.mode }}"
+  with_items: "{{ aff_paths }}"
+
+- name: Place authStore.php configuration file in place.
+  template:
+    src: auth.php.j2
+    dest: "/vagrant/domain/authStore.php"
+    owner: vagrant
+    group: vagrant
+    mode: 0777
