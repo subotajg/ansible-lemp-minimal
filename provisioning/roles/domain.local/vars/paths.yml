@@ -1,4 +1,4 @@
 ---
 aff_paths:
   - { path: "/vagrant/domaintmp/logs", mode: 755 }
-  - { path: "/vagrant/affiliate.admin/tmp/cache", mode: 755 }
+  - { path: "/vagrant/domaintmp/tmp/cache", mode: 755 }
